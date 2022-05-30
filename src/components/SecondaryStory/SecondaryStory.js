@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { BorderedLink } from "../BorderedLink/BorderedLink";
 
 const SecondaryStory = ({ id, title, image, location, abstract }) => {
   return (
-    <a href={`/story/${id}`}>
+    <BorderedLink href={`/story/${id}`}>
       <Wrapper>
         <Image alt={image.alt} src={image.src} />
         <Heading>{title}</Heading>
@@ -11,7 +12,7 @@ const SecondaryStory = ({ id, title, image, location, abstract }) => {
           <Abstract>{abstract}</Abstract>
         </AbstractGrid>
       </Wrapper>
-    </a>
+    </BorderedLink>
   );
 };
 
