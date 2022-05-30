@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { QUERIES } from "../../constants";
 import { BorderedLink } from "../BorderedLink/BorderedLink";
 
 const OpinionStory = ({ id, title, author, avatar }) => {
@@ -18,6 +19,13 @@ const OpinionStory = ({ id, title, author, avatar }) => {
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
+  display: grid;
+  grid-template-columns: 1fr 48px;
+  gap: 16px;
+
+  @media ${QUERIES.tabletOnly} {
+    display: revert;
+  }
 `;
 
 const Avatar = styled.img`
@@ -26,6 +34,8 @@ const Avatar = styled.img`
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
+  grid-column: 2;
+  grid-row: 1;
 `;
 
 const AuthorName = styled.p`
